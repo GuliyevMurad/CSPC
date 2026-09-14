@@ -17,11 +17,22 @@ def test_starts_at_N0():
 
 
 # TODO 1: test_rejects_negative_rate
-#   Check that calling simulate(...) with a negative lam raises a ValueError.
-#   Which pytest tool checks that an error is raised?
+def test_rejects_negative_rate():
+    with pytest.raises(ValueError):
+        simulate(1000, -0.4)
+
 
 
 # TODO 2: test_matches_law
-#   Check that the simulation's AVERAGE over many seeds is close to the
-#   physical law  N0 * exp(-lam * t).
-#   Which pytest tool compares floating-point values with a tolerance?
+def test_matches_law():
+    N0 = 1000
+    decay_rate = 0.4
+    t = 1.0
+    theoretical_val = N0 * np.exp(-decay_rate * t)
+
+    # dt = 0.05, поэтому за t=1.0 проходит 1.0 / 0.05 = 20 шагов
+    step_index = 20  
+    runs = [simulate(N0, decay_rate)[step_index] for _ in range(100)]
+    avg_val = np.mean(runs)
+
+    assert avg_val == pytest.approx(theoretical_val, rel=1e-1)
