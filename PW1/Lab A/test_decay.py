@@ -30,7 +30,6 @@ def test_matches_law():
     t = 1.0
     theoretical_val = N0 * np.exp(-decay_rate * t)
 
-    # dt = 0.05, поэтому за t=1.0 проходит 1.0 / 0.05 = 20 шагов
     step_index = 20  
     runs = [simulate(N0, decay_rate)[step_index] for _ in range(100)]
     avg_val = np.mean(runs)
