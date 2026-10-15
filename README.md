@@ -58,3 +58,24 @@ Processed noisy free-fall position measurements by taking numerical derivatives 
 **Conclusion:**
 Differentiation amplifies noise while integration cleans it up, which is an important lesson for handling real data. Note: I used an AI assistant as a tutor to help me understand the code and guide me through the terminal commands.
 
+
+
+**Lab B: Optimization in Chemistry**
+
+**What I built:** Compared three optimization methods (gradient descent, Newton's method, and SLSQP) on convex and complex functions, and then applied optimization techniques to fit a first-order reaction rate constant, solve a chemical equilibrium problem and locate a titration equivalence point.
+
+**Data & Results:** 
+- **Warm-up (Part 2):**
+On the easy function, all three methods reached x ≈ 3. On the harder landscape, the starting point changed the final result, and Newton's method from x0 = 0 landed on a maximum (g''(x) = -5.65) rather than a minimum because it only finds where the slope is zero.
+
+- **Kinetics (Part 3):** 
+Fitted the rate constant k ≈ 0.26 for the decaying concentration data.
+
+- **Equilibrium (Part 4):** 
+Both Newton and SLSQP converged to the extent x ≈ 0.66, giving equilibrium amounts of H2 = 0.34 mol, I2 = 0.34 mol, and HI = 1.33 mol.
+
+- **Titration (Part 5):** 
+Located the titration equivalence point at exactly 50.00 mL using numerical differentiation (`np.gradient`).
+
+**Conclusion:** 
+Optimization methods behave differently depending on the starting point and the algorithm used and techniques like minimization and root-finding are powerful tools for solving real chemistry problems. Note: I used an AI assistant as a tutor to help me understand the code and guide me through the terminal commands.
