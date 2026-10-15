@@ -35,3 +35,26 @@ The Snakemake rule automatically tracks dependencies between decay_observed.csv,
 **Conclusion:**
 Using Python and Snakemake together makes data analysis easy to repeat and saves time by avoiding doing the same work twice. Note: I used an AI assistant as a tutor to help me understand the code and guide me through the terminal commands.
 
+
+
+
+
+
+
+
+## PW2
+**Lab A: Motion from Tracking Data**
+
+Why acceleration is noisy: Taking two derivatives magnifies tiny measurement errors from the position data, making the acceleration look very rough.
+
+**What I built:** 
+Processed noisy free-fall position measurements by taking numerical derivatives using NumPy to compute velocity and acceleration, and then used cumulative trapezoidal integration to recover the original position.
+
+**Data & Results:** 
+- Mean acceleration: -8.58 m/s² (close to the true free-fall value of -9.81 m/s²).
+- Standard deviation of acceleration: 28.72 (showing high noise).
+- Max difference after integrating back: ~0.78 meters.
+
+**Conclusion:**
+Differentiation amplifies noise while integration cleans it up, which is an important lesson for handling real data. Note: I used an AI assistant as a tutor to help me understand the code and guide me through the terminal commands.
+
