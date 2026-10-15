@@ -7,9 +7,9 @@ Lab A: Reproducible Foundations
 Built the foundational CSPC repository with a configured Conda environment, wrote unit tests using pytest, and created a script to compare computation performance.
 
 **Speed comparison (loop vs NumPy):**
-loop : 2.715100 s
-numpy : 0.000289 s
-speed-up: ~9401 faster
+loop : 2.839364 s
+numpy : 0.000291 s
+speed-up: ~9768 faster
 
 **Tests:** all passing? 
 yes
